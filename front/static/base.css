@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'Decima Mono Pro';
+    src: url("./fonts/DecimaMonoPro.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+article, main, section {
+    display: block;
+    font-family: "Decima Mono Pro", serif;
+    font-weight: normal;
+}
+
+a, a:visited, a:link {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.main-content .wrapper {
+    max-width: 1130px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.main-content section.section-snap {
+    position: relative;
+    backface-visibility: hidden;
+    min-height: 100vh;
+}
+
+.main-content section.section-snap .half {
+    letter-spacing: normal;
+    display: inline-block;
+    zoom: 1;
+    width: 100%;
+}
+
+@media only screen and (min-width: 890px) {
+    .main-content section.section-snap .half {
+        vertical-align: top;
+    }
+
+    .main-content section.section-snap .uno {
+        width: 50%;
+    }
+
+    .main-content section.section-snap .due {
+        width: 49%;
+    }
+
+    .main-content section.section-snap .half-wrap > * {
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+    }
+
+}
+
+.main-content section.section-snap .half-wrap .event-animation {
+    width: 512px;
+}
+
+.main-content section.section-snap.fixed {
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 890px) {
+    .main-content section.section-snap.fixed .div-snap {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        vertical-align: middle;
+        background-color: transparent;
+    }
+}
+
+.event-info {
+    margin-right: -10px;
+    text-align: justify;
+}
+
+.event-info > * {
+    font-family: "Decima Mono Pro", serif;
+}
+
+.event-info .logo-wrap {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.event-info img.logo {
+    max-width: 300px;
+}
+
+.event-info h1 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.event-info p {
+    line-height: 25px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.event-info ul.dashed {
+    margin: 0 0 20px 50px;
+    list-style-type: none;
+}
+
+.event-info ul.dashed > li {
+    text-indent: -5px;
+    line-height: 25px;
+}
+
+.event-info ul.dashed > li:before {
+    content: "- ";
+    text-indent: -5px;
+}
+
+.event-info .column {
+    letter-spacing: normal;
+    vertical-align: top;
+}
+
+.event-info .column h5 {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 25px;
+}
+
+@media only screen and (min-width: 890px) {
+    .event-info .column {
+        display: inline-block;
+    }
+
+    .event-info .column h5 {
+        width: 246px;
+        line-height: 30px;
+    }
+
+    .main-content section.section-snap .artists {
+        margin-bottom: 20px;
+    }
+}
+
+.main-content section.section-snap.bottom {
+    vertical-align: bottom;
+}
+
+.main-content section.section-snap.bottom .div-snap {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    vertical-align: bottom;
+    background-color: transparent;
+    height: 100%;
+    margin-bottom: 200px;
+}
+
+.lang-wrap {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.lang-wrap .lang {
+    display: inline-block;
+}
+
+.lang-wrap .lang a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid black;
+}
+
+.lang-wrap .lang a.active {
+    border-bottom: 2px solid black;
+}
+
+.header-wrap {
+    width: 300px;
+    margin: 45px auto;
+    text-align: center;
+}
+
+.main-content section.section-snap .div-snap {
+    background-image: url("img/scene3.gif");
+}
+
+.main-content .footer {
+    width: 100%;
+}
+
+.main-content section.socials {
+    text-align: center;
+}
+
+.main-content section.socials img {
+    cursor: pointer;
+    width: 50px;
+    margin: 0 40px;
+}
+
+.main-content section.section-snap .artist {
+    overflow: hidden;
+    height: 30px;
+    transition-property: height;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+
+.main-content section.section-snap .artist a {
+    display: list-item;
+    line-height: 14px;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    text-align: left;
+    list-style-type: none;
+    margin: 6px 0 6px 16px;
+    font-size: 12px;
+}
+
+.main-content section.section-snap .artist a.f {
+    margin-top: 2px;
+}
+
+.event-info .column .artist:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    padding-left: 15px;
+    margin-left: -15px;
+    overflow: visible;
+    height: auto;
+    padding-bottom: 5px;
+}

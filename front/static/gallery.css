@@ -1,0 +1,94 @@
+
+.main-content section.gallery {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.main-content section.gallery .gallery-wrap {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    height: 360px;
+    width: 4468px;
+}
+
+.main-content section.gallery img {
+    height: 360px;
+    margin: 0 -5px;
+}
+
+.main-content section.gallery #gallery img.move {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.main-content section.gallery a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+}
+
+.main-content section.gallery .next {
+    right: 0;
+}
+
+.main-content section.gallery .prev {
+    left: 0;
+}
+
+/*keyframe animations*/
+.first {
+    -webkit-animation: bannermove 60s linear infinite;
+    -moz-animation: bannermove 60s linear infinite;
+    -ms-animation: bannermove 60s linear infinite;
+    animation: bannermove 60s linear infinite;
+}
+
+@keyframes bannermove {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -2708px;
+    }
+}
+
+@-moz-keyframes bannermove {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -2708px;
+    }
+}
+
+@-webkit-keyframes bannermove {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -2708px;
+    }
+}
+
+@-ms-keyframes bannermove {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -2708px;
+    }
+}
+
+@-o-keyframes bannermove {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -2708px;
+    }
+}

@@ -1,0 +1,117 @@
+@media only screen and (min-width: 890px) {
+
+    .main-content section.placement .part {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .main-content section.placement .map-wrap {
+        width: 50%;
+    }
+
+    .main-content section.placement .map-wrap #map {
+        width: 512px;
+        height: 100%;
+    }
+
+    .main-content section.placement .contact-info {
+        width: 49%;
+        padding-left: 36px;
+        margin-top: 0;
+    }
+
+    .contact-info .sponsors {
+        margin: 10px 5px;
+        text-align: left;
+        padding-left: 0;
+    }
+}
+
+.main-content section.placement {
+    margin-bottom: 40px;
+}
+
+.main-content section.placement .contact-info {
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 25px;
+}
+
+.contact-info p {
+    font-style: normal;
+}
+
+.contact-info h5 {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.contact-info .with-icon > * {
+    display: inline-block;
+}
+
+.contact-info .with-icon {
+    font-size: 20px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 46px;
+    padding-left: 76px;
+    margin: 10px 0;
+}
+
+.contact-info h5#phone {
+    background: url("img/icon_phone.png") no-repeat;
+    -webkit-background-size: contain;
+    background-size: 46px;
+}
+
+.contact-info h5#email {
+    background: url("img/icon_email.png") no-repeat;
+    -webkit-background-size: contain;
+    background-size: 46px;
+}
+
+.contact-info #clock {
+    background: url("img/icon_clock.png") no-repeat;
+    -webkit-background-size: contain;
+    background-size: 46px;
+}
+
+.contact-info #clock h5 {
+    display: list-item;
+    list-style-type: none;
+    line-height: 25px;
+}
+
+.contact-info h5#open {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.map-wrap {
+    height: 360px;
+}
+
+.map-wrap #map {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-info .sponsors {
+    margin: 10px 0;
+    text-align: center;
+    padding-left: 50px;
+}
+
+.contact-info .sponsors img {
+    margin: 0 20px;
+}
+
+.contact-info .sponsors img#surf {
+    width: 80px;
+}
+
+.contact-info .sponsors img#bri {
+    width: 150px;
+}
