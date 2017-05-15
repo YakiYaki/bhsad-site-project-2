@@ -1,0 +1,45 @@
+
+
+.main-content section.section-snap .artist {
+    overflow: hidden;
+    height: 30px;
+    transition-property: height;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+}
+
+.main-content section.section-snap .artist a {
+    display: list-item;
+    line-height: 14px;
+    background-size: 14px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    text-align: left;
+    list-style-type: none;
+    margin: 6px 0 6px 16px;
+    font-size: 12px;
+}
+
+.main-content section.section-snap .artist a.f {
+    margin-top: 2px;
+}
+
+.event-info .column .artist:hover {
+    cursor: pointer;
+    background-color: #f9f9f9;
+    padding-left: 15px;
+    margin-left: -15px;
+    overflow: visible;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+.main-content section.socials {
+    text-align: center;
+}
+
+.main-content section.socials img {
+    cursor: pointer;
+    width: 50px;
+    margin: 0 40px;
+}

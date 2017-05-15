@@ -1,11 +1,13 @@
 {% load staticfiles %}
+{% load extras %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link type="text/css" href="{% static 'base.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'gallery.css' %}" rel="stylesheet">
     <link type="text/css" href="{% static 'contacts.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'content.css' %}" rel="stylesheet">
     <title>Facets</title>
 </head>
 <body>
@@ -14,9 +16,7 @@
         <section class="section-snap fixed">
             <div class="half uno">
                 <div class="half-wrap div-snap">
-                    <div class="event-animation">
-
-                    </div>
+                    <div class="event-animation"></div>
                 </div>
             </div>
             <div class="half due">
@@ -24,7 +24,7 @@
                     <article class="event-info">
                         <div class="lang-wrap">
                             <h4 class="lang">
-                                <a {% if lang == 'ru' %} class="active" {% endif %} href="/ru">RUS</a>
+                                <a {% if lang == 'ru' %} class="active" {% endif %} href="/ru">РУС</a>
                             </h4>
                             <h4 class="lang">
                                 <a {% if lang == 'en' %} class="active" {% endif %} href="/en">ENG</a>
@@ -34,25 +34,30 @@
                             <a href="/"><img class="logo" src="{% static 'img/logo.png' %}" title="Логотип Facets"
                                              alt="Логотип Facets"></a>
                         </div>
-                        <h1>Выставка документальной иллюстрации</h1>
-                        <p>FACETS/ГРАНИ - выставка студентов-иллюстраторов Британской Высшей Школы Дизайна, посвященная
-                            документальным формам иллюстрации.</p>
-                        <p>Художник воспринимает реальность через призму своего опыта и личных качеств, поэтому даже
-                            документальные работы изображают ее в преобразованном виде. Выставка посвящена
-                            документальным формам иллюстрации:</p>
+                        <h1>
+                            {% if lang == 'ru' %}
+                                Выставка документальной иллюстрации
+                            {% else %}
+                                Exhibition of documentary illustration
+                            {% endif %}
+                        </h1>
+                        <p>{{ content.0 }}</p>
+                        <p>{{ content.1 }}</p>
                         <ul class="dashed">
-                            <li>портрет</li>
-                            <li>наблюдения и зарисовки</li>
-                            <li>автобиографические работы</li>
-                            <li>репортаж</li>
+                            {% for a in content.2 %}
+                                <li>{{ a }}</li>
+                            {% endfor %}
                         </ul>
-                        <p>Каждая из этих форм - это грань реальности, отраженная и преобразованная авторским взглядом
-                            художника.</p>
-                        <p>Наша выставка FACETS/ГРАНИ - размышление о гранях художественного восприятия, границах между
-                            личным и объективным, о многогранности жанра документальной иллюстрации и о том, как
-                            разнообразны формы, которые принимает реальность в глазах смотрящего.</p>
+                        <p>{{ content.3 }}</p>
+                        <p>{{ content.4 }}</p>
                         <div class="artists">
-                            <h1>Художники</h1>
+                            <h1>
+                                {% if lang == 'ru' %}
+                                    Художники
+                                {% else %}
+                                    Artists
+                                {% endif %}
+                            </h1>
                             <div class="column">
                                 {% for a in artists_half1 %}
                                     <div class="artist">
@@ -62,27 +67,13 @@
                                             {{ a.name_ru }}
                                         {% endif %}
                                         </h5>
-                                        {% if a.behance %}
-                                            <a class="f" style="background-image: url('static/img/icon_small_1.png')">{{ a.behance }}</a>
-                                        {% endif %}
-                                        {% if a.email %}
-                                            <a style="background-image: url('static/img/icon_small_2.png')">{{a.email}}</a>
-                                        {% endif %}
-                                        {% if a.facebook %}
-                                            <a style="background-image: url('static/img/icon_small_3.png')">{{a.facebook}}</a>
-                                        {% endif %}
-                                        {% if a.instagram %}
-                                            <a style="background-image: url('static/img/icon_small_4.png')">{{a.instagram}}</a>
-                                        {% endif %}
-                                        {% if a.tumblr %}
-                                            <a style="background-image: url('static/img/icon_small_5.png')">{{a.tumblr}}</a>
-                                        {% endif %}
-                                        {% if a.vk %}
-                                            <a style="background-image: url('static/img/icon_small_6.png')">{{a.vk}}</a>
-                                        {% endif %}
-                                        {% if a.website %}
-                                            <a style="background-image: url('static/img/icon_small_7.png')">{{a.website}}</a>
-                                        {% endif %}
+                                        {% for data in a.get_data %}
+                                            {% if data %}
+                                                <a class="f"
+                                                   style="background-image: url('{{ forloop.counter|get_icon }}')">
+                                                    {{ data }}</a>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 {% endfor %}
                             </div>
@@ -95,27 +86,13 @@
                                             {{ a.name_ru }}
                                         {% endif %}
                                         </h5>
-                                        {% if a.behance %}
-                                            <a class="f" style="background-image: url('static/img/icon_small_1.png')">{{a.behance}}</a>
-                                        {% endif %}
-                                        {% if a.email %}
-                                            <a style="background-image: url('static/img/icon_small_2.png')">{{a.email}}</a>
-                                        {% endif %}
-                                        {% if a.facebook %}
-                                            <a style="background-image: url('static/img/icon_small_3.png')">{{a.facebook}}</a>
-                                        {% endif %}
-                                        {% if a.instagram %}
-                                            <a style="background-image: url('static/img/icon_small_4.png')">{{a.instagram}}</a>
-                                        {% endif %}
-                                        {% if a.tumblr %}
-                                            <a style="background-image: url('static/img/icon_small_5.png')">{{a.tumblr}}</a>
-                                        {% endif %}
-                                        {% if a.vk %}
-                                            <a style="background-image: url('static/img/icon_small_6.png')">{{a.vk}}</a>
-                                        {% endif %}
-                                        {% if a.website %}
-                                            <a style="background-image: url('static/img/icon_small_7.png')">{{a.website}}</a>
-                                        {% endif %}
+                                        {% for data in a.get_data %}
+                                            {% if data %}
+                                                <a class="f"
+                                                   style="background-image: url('{{ forloop.counter|get_icon }}')">
+                                                    {{ data }}</a>
+                                            {% endif %}
+                                        {% endfor %}
                                     </div>
                                 {% endfor %}
                             </div>
@@ -127,7 +104,13 @@
     </div>
     <section class="gallery" role="complementary">
         <div class="header-wrap">
-            <h1>Галлерея</h1>
+            <h1>
+                {% if lang == 'ru' %}
+                    Галерея
+                {% else %}
+                    Gallery
+                {% endif %}
+            </h1>
         </div>
         <div class="gallery-wrap">
             <img class="move first" src="{% static 'gallery/1.jpg' %}">
@@ -146,35 +129,41 @@
     </section>
     <section class="placement" role="complementary">
         <div class="header-wrap">
-            <h1>Контактная информация</h1>
+            <h1>
+                {% if lang == 'ru' %}
+                    Контактная информация
+                {% else %}
+                    Contacts
+                {% endif %}
+            </h1>
         </div>
         <div class="wrapper">
             <div class="map-wrap part">
                 <div id="map"></div>
             </div>
             <address class="contact-info part">
-                <p>Artplay, SURF coffee</p>
-                <p>Нижняя Сыромятническая 10, стр.</p>
-                <p>2А, этаж 2</p>
-                <h5 id="open">Открытие: 19 мая 19:00</h5>
+                <p>{{ content.5 }}</p>
+                <p>{{ content.6 }}<br>{{ content.7 }}</p>
+                <h5 id="open">{{ content.8 }}</h5>
                 <div class="with-icon" id="clock">
-                    <h5>20 мая - 28 мая</h5>
+                    <h5>{{ content.9 }}</h5>
                     <h5>11:00 - 22:00</h5>
                 </div>
                 <h5 class="with-icon" id="phone">+7 [916] 701-01-35</h5>
-                <h5 class="with-icon" id="email">bri.nonfiction@mail.ru</h5>
+                <h5 class="with-icon" id="email">bri.nonfiction@gmail.com</h5>
                 <div class="sponsors">
                     <img id="surf" src="{% static 'img/icon_surf.png' %}">
                     <img id="bri" src="{% static 'img/icon_bri.png' %}">
+                    <img id="copyprint" src="{% static 'img/logo_copyprint.png' %}">
                 </div>
             </address>
         </div>
     </section>
     <section class="socials" role="complementary">
         <div class="wrapper">
-            <img src="{% static 'img/icon_vk.png' %}">
-            <img src="{% static 'img/icon_facebook.png' %}">
-            <img src="{% static 'img/icon_insta.png' %}">
+            <a target="_blank" href="https://vk.com/facets.exhibition"><img src="{% static 'img/icon_vk.png' %}"></a>
+            <a target="_blank" href="https://www.facebook.com/events/1411155505637882/"><img src="{% static 'img/icon_facebook.png' %}"></a>
+            <a target="_blank" href="https://www.instagram.com/facets.exhibition/"><img src="{% static 'img/icon_insta.png' %}"></a>
         </div>
     </section>
     <img class="footer" src="{% static 'img/bottom1.png' %}">

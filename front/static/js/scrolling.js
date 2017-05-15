@@ -26,7 +26,7 @@ var scrollPos,
     secHeight,
     secBot,
     secBotPos;
-var offset = 60;
+var offset = 20;
 
 function scrolling() {
 
