@@ -1,5 +1,4 @@
 
-
 .main-content section.section-snap .artist {
     overflow: hidden;
     height: 30px;
@@ -16,8 +15,10 @@
     padding-left: 30px;
     text-align: left;
     list-style-type: none;
-    margin: 6px 0 6px 16px;
+    margin: 6px 0 6px 12px;
     font-size: 12px;
+    max-width: 246px;
+    word-wrap: break-word;
 }
 
 .main-content section.section-snap .artist a.f {
